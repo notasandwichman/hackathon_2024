@@ -1,5 +1,6 @@
 import csv
 import random
+import json
 
 def csv_to_spell_dict(csv_file):
     spell_dict = {}
@@ -49,12 +50,17 @@ def select_random_spells_with_common_attribute(spell_dict):
             return attribute, chosen_value, selected_spells
 
 
-csv_file = 'dnd-spells.csv'  
-spell_dictionary = csv_to_spell_dict(csv_file)
-attribute, value, spells = select_random_spells_with_common_attribute(spell_dictionary)
 
-if attribute and value and spells:
-    print("Attribute:", attribute, value)
-    print("Spells:", ", ".join(spells))
-else:
-    print("Not enough spells found for the chosen attribute value.")
+spell_sets = {}
+for i in range(4):
+    csv_file = 'dnd-spells.csv'  
+    spell_dictionary = csv_to_spell_dict(csv_file)
+    attribute, value, spells = select_random_spells_with_common_attribute(spell_dictionary)
+    spell_sets[f"Set {i+1}"] = {"attribute": attribute, "value": value, "spells": spells}
+
+# Write the spell sets into a JSON file
+output_file = 'spell_sets.json'
+with open(output_file, 'w') as json_file:
+    json.dump(spell_sets, json_file, indent=4)
+
+print("Spell sets have been saved to", output_file)

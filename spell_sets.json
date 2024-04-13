@@ -1,0 +1,42 @@
+{
+    "Set 1": {
+        "attribute": "range",
+        "value": "Self (5-foot radius)",
+        "spells": [
+            "Booming Blade",
+            "Green-Flame Blade",
+            "Sword Burst",
+            "Thunderclap"
+        ]
+    },
+    "Set 2": {
+        "attribute": "classes",
+        "value": "Cleric, Druid, Wizard",
+        "spells": [
+            "Augury",
+            "Control Water",
+            "Divination",
+            "Control Weather"
+        ]
+    },
+    "Set 3": {
+        "attribute": "range",
+        "value": "Self (10-foot radius)",
+        "spells": [
+            "Arms of Hadar",
+            "Earth Tremor",
+            "Antilife Shell",
+            "Globe of Invulnerability"
+        ]
+    },
+    "Set 4": {
+        "attribute": "classes",
+        "value": "Druid, Wizard",
+        "spells": [
+            "Tidal Wave",
+            "Conjure Minor Elementals",
+            "Conjure Elemental",
+            "Whirlwind"
+        ]
+    }
+}

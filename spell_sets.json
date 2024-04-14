@@ -1,16 +1,6 @@
 {
     "Set 1": {
-        "attribute": "range",
-        "value": "Self (15-foot cone)",
-        "spells": [
-            "Burning Hands",
-            "Color Spray",
-            "Frost Fingers",
-            "Icingdeath's Frost (UA)"
-        ]
-    },
-    "Set 2": {
-        "attribute": "classes",
+        "attribute": "Classes",
         "value": "Artificer, Bard, Sorcerer, Warlock, Wizard",
         "spells": [
             "Mage Hand",
@@ -19,8 +9,8 @@
             "Intellect Fortress"
         ]
     },
-    "Set 3": {
-        "attribute": "range",
+    "Set 2": {
+        "attribute": "Range",
         "value": "Self (5-foot radius)",
         "spells": [
             "Booming Blade",
@@ -29,14 +19,24 @@
             "Thunderclap"
         ]
     },
-    "Set 4": {
-        "attribute": "range",
+    "Set 3": {
+        "attribute": "Range",
         "value": "Sight",
         "spells": [
             "Skywrite",
             "Mirage Arcane",
             "Tsunami",
             "Storm of Vengeance"
+        ]
+    },
+    "Set 4": {
+        "attribute": "Range",
+        "value": "Self (10-foot radius)",
+        "spells": [
+            "Arms of Hadar",
+            "Earth Tremor",
+            "Antilife Shell",
+            "Globe of Invulnerability"
         ]
     }
 }

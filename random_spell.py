@@ -55,7 +55,7 @@ spell_sets = {}
 used_spells = set()  # Keep track of used spells to avoid duplicates
 i = 0
 while i < 4:
-    csv_file = 'dnd-spells.csv'  
+    csv_file = 'dnd-spells.csv'
     spell_dictionary = csv_to_spell_dict(csv_file)
     attribute, value, spells = select_random_spells_with_common_attribute(spell_dictionary)
     # Ensure selected spells are unique across all sets
@@ -63,13 +63,13 @@ while i < 4:
     if len(unique_spells) < 4:
         # If there are not enough unique spells, try again with a new set
         continue
-    spell_sets[f"Set {i+1}"] = {"attribute": attribute, "value": value, "spells": unique_spells}
+    spell_sets[f"Set {i+1}"] = {"attribute": attribute[0].upper()+attribute[1:], "value": value, "spells": unique_spells}
     # Add used spells to the set to avoid duplicates
     used_spells.update(unique_spells)
     i += 1
 
 # Write the spell sets into a JSON file
-output_file = 'spell_sets.json'
+output_file = 'react-connections/src/lib/spell_sets.json'
 with open(output_file, 'w') as json_file:
     json.dump(spell_sets, json_file, indent=4)
 

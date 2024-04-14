@@ -52,11 +52,21 @@ def select_random_spells_with_common_attribute(spell_dict):
 
 
 spell_sets = {}
-for i in range(4):
+used_spells = set()  # Keep track of used spells to avoid duplicates
+i = 0
+while i < 4:
     csv_file = 'dnd-spells.csv'  
     spell_dictionary = csv_to_spell_dict(csv_file)
     attribute, value, spells = select_random_spells_with_common_attribute(spell_dictionary)
-    spell_sets[f"Set {i+1}"] = {"attribute": attribute, "value": value, "spells": spells}
+    # Ensure selected spells are unique across all sets
+    unique_spells = [spell for spell in spells if spell not in used_spells]
+    if len(unique_spells) < 4:
+        # If there are not enough unique spells, try again with a new set
+        continue
+    spell_sets[f"Set {i+1}"] = {"attribute": attribute, "value": value, "spells": unique_spells}
+    # Add used spells to the set to avoid duplicates
+    used_spells.update(unique_spells)
+    i += 1
 
 # Write the spell sets into a JSON file
 output_file = 'spell_sets.json'
